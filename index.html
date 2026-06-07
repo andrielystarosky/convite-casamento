@@ -417,6 +417,24 @@
       background: linear-gradient(180deg, transparent, var(--paper-2) 18%, var(--paper-2) 82%, transparent);
     }
 
+    .video-section {
+      margin-top: 42px;
+      margin-bottom: 42px;
+    }
+
+    .video-section video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    
+      border-radius: 24px;
+      overflow: hidden;
+    
+      border: 1px solid var(--gold-border);
+      box-shadow: var(--shadow);
+    
+      background: #000;
+    }
+
     .carousel {
       margin-top: 42px;
       position: relative;
@@ -484,7 +502,9 @@
       border-radius: var(--radius);
       padding: clamp(30px, 6vw, 58px);
       display: grid;
-      grid-template-columns: 1fr 0.86fr;
+      grid-template-columns: 1fr;
+      max-width: 700px;
+      margin: 42px auto 0;
       gap: 36px;
       align-items: center;
       box-shadow: var(--shadow);
@@ -729,8 +749,18 @@
       <div class="container">
         <div class="section-kicker"><p class="eyebrow"></p></div>
         <p class="section-lead">
-         Deixamos aqui algumas fotos especiais do nosso pré-wedding.
+         Deixamos aqui alguns momentos especiais do nosso pré-wedding.
         </p>
+
+        <div class="video-section">
+          <video
+            controls
+            preload="metadata"
+            poster="assets/fotos/capa-video.jpg"
+          >
+            <source src="assets/video/pre-wedding.mp4" type="video/mp4">
+          </video>
+        </div>
 
 
         <div class="carousel" aria-label="Galeria de fotos do casal">
@@ -790,35 +820,42 @@
       </div>
     </section>
 
-    <section>
-      <div class="container">
-        <div class="section-kicker"><p class="eyebrow">Presentes</p></div>
-        <h2 class="section-title">Seu carinho já é um presente.</h2>
+<section>
+  <div class="container">
+    <div class="section-kicker">
+      <p class="eyebrow">Presentes</p>
+    </div>
+
+    <h2 class="section-title">Sua presença já é um presente.</h2>
+
+    <p class="section-lead">
+      O mais importante para nós é celebrar esse dia ao lado das pessoas que amamos.
+      Mas, caso deseje nos presentear de outra forma, disponibilizamos nossa chave Pix abaixo.
+    </p>
+
+    <div class="gift-card">
+      <div class="pix-box">
+        <p class="eyebrow">Lista de presentes</p>
+
+        <h3 class="section-title" style="font-size: clamp(1.9rem, 5vw, 3.1rem);">
+          Contribuição por Pix
+        </h3>
+
         <p class="section-lead">
-          Caso deseje nos presentear, deixamos a opção de Pix em destaque e algumas sugestões para quem preferir presente físico.
+          Sua contribuição será recebida com muito carinho e nos ajudará a construir nossos primeiros sonhos como família.
         </p>
 
-        <div class="gift-card">
-          <div class="pix-box">
-            <p class="eyebrow">Pix dos noivos</p>
-            <h3 class="section-title" style="font-size: clamp(1.9rem, 5vw, 3.1rem);">Contribuição por Pix</h3>
-            <p class="section-lead">Substituir este texto pela chave Pix oficial.</p>
-            <div class="pix-key" id="pixKey">chave-pix-aqui</div>
-            <button class="button" type="button" onclick="copyPix()">Copiar chave Pix</button>
-          </div>
-
-          <div>
-            <p class="eyebrow">Sugestões</p>
-            <ul class="gift-list">
-              <li>Itens para casa</li>
-              <li>Experiências para a lua de mel</li>
-              <li>Cartão presente</li>
-              <li>Contribuição livre por Pix</li>
-            </ul>
-          </div>
+        <div class="pix-key" id="pixKey">
+          chave-pix-aqui
         </div>
+
+        <button class="button" type="button" onclick="copyPix()">
+          Copiar chave Pix
+        </button>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <footer class="footer">
       <div class="container">
